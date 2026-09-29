@@ -833,149 +833,134 @@ button {
     text-align: center;
 }
 
-
 /* =========================================================
    REGALOS
    ========================================================= */
 
-.regalos-overlay {
-  position: absolute;
+.regalos {
+    position: relative;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background: #f9d9e4;
 }
 
+.fondo-regalos {
+    inset: 0;
 
-/*
-   Área de Pampers y Wipes.
-   Se mantiene limpia y visible encima del PNG.
-*/
+    z-index: 0;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.72),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255,255,255,.55),
+            transparent 28%
+        );
+}
+
+.regalos-contenido {
+    max-width: 520px;
+}
+
+.regalos h2 {
+    font-size:
+        clamp(38px,9vw,58px);
+}
+
+.regalos-subtitulo {
+    width: min(350px,92%);
+
+    margin:
+        17px auto 24px;
+
+    color: #79505f;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+}
 
 .regalos-lista {
-  position: absolute;
+    width: min(390px,100%);
 
-  left: 50%;
-  top: 58%;
+    margin: 0 auto;
 
-  transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
 
-  width: min(82%, 430px);
-
-  display: flex;
-  flex-direction: column;
-
-  gap: clamp(14px, 3vw, 25px);
+    gap: 12px;
 }
 
 .regalo-item {
-  position: relative;
+    display: flex;
+    align-items: center;
 
-  width: 100%;
+    gap: 15px;
 
-  display: flex;
-  align-items: center;
+    padding: 16px 19px;
 
-  gap: 14px;
+    border:
+        1px solid rgba(209,3,15,.17);
 
-  padding: 13px 18px;
+    border-radius: 20px;
 
-  border: 0;
-  border-radius: 18px;
+    background:
+        rgba(255,255,255,.72);
 
-  background: rgba(255, 255, 255, 0.72);
+    text-align: left;
 
-  color: #966c71;
-
-  text-align: left;
-
-  box-shadow:
-    0 8px 24px rgba(100, 60, 70, 0.08);
-
-  cursor: pointer;
-
-  animation:
-    aparecerRegalo 0.8s ease both,
-    flotarRegalo 4s ease-in-out infinite;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.regalo-item:nth-child(2) {
-  animation-delay: 0.2s, 0.6s;
-}
-
-.regalo-item:hover {
-  transform: translateY(-4px);
-
-  box-shadow:
-    0 12px 28px rgba(100, 60, 70, 0.12);
+    box-shadow:
+        0 10px 25px rgba(91,28,46,.07);
 }
 
 .regalo-icono {
-  flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
 
-  width: 35px;
-  height: 35px;
+    flex: 0 0 38px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: grid;
+    place-items: center;
 
-  border-radius: 50%;
+    border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.8);
+    color: white;
 
-  font-size: 17px;
+    background: var(--rojo);
+
+    font-size: 17px;
 }
 
-.regalo-texto {
-  display: flex;
-  flex-direction: column;
+.regalo-item strong {
+    display: block;
 
-  gap: 2px;
+    color: var(--rojo);
+
+    font-size: 11px;
 }
 
-.regalo-texto strong {
-  font-family: "Montserrat", sans-serif;
+.regalo-item p {
+    margin-top: 4px;
 
-  font-size: 12px;
-  font-weight: 700;
+    color: #79505f;
 
-  letter-spacing: 1.2px;
+    font-size: 9px;
 }
 
-.regalo-texto small {
-  font-family: "Montserrat", sans-serif;
+.regalos-frase {
+    margin-top: 25px;
 
-  font-size: 9px;
+    color:  var(--rojo);
 
-  letter-spacing: 0.3px;
-}
 
-@keyframes aparecerRegalo {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
+    font-family: "Joshico",cursive;
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    font-size: 18px;
 
-@keyframes flotarRegalo {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-4px);
-  }
+    line-height: 1.35;
 }
 
 
