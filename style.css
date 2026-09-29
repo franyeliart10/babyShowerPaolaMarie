@@ -29,6 +29,17 @@ button {
 }
 
 
+:root {
+    --rosa: #F6ADC1;
+    --rojo: #D1030F;
+    --blanco: #FFFFFF;
+    --rosa-claro: rgba(246, 173, 193, 0.28);
+    --rosa-suave: #fff4f7;
+    --texto: #5d2637;
+    --texto-suave: #79505f;
+    --sombra: 0 18px 45px rgba(91, 28, 46, 0.13);
+}
+
 /* =========================================================
    PORTADA
    IMPORTANTE:
@@ -54,40 +65,100 @@ button {
   object-position: center;
 }
 
+/* =========================================================
+   BOTÓN ABRIR
+   ========================================================= */
+
 .boton-abrir {
-  position: absolute;
-  left: 50%;
-  bottom: 8%;
-  transform: translateX(-50%);
+    position: absolute;
 
-  border: 0;
-  padding: 14px 28px;
+    left: 50%;
+    bottom: max(34px, env(safe-area-inset-bottom));
 
-  background: rgba(255, 255, 255, 0.92);
-  color: #9c646b;
+    z-index: 20;
 
-  border-radius: 30px;
+    min-width: 210px;
+    max-width: calc(100% - 40px);
 
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
+    padding: 14px 25px;
 
-  cursor: pointer;
+    border: 1px solid rgba(255,255,255,.95);
+    border-radius: 999px;
 
-  box-shadow: 0 8px 25px rgba(120, 70, 80, 0.12);
+    color: #fff;
+    background: var(--rojo);
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.16);
+
+    font-family: "Cinzel", serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .13em;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transform: translateX(-50%);
+
+    animation: flotarGlow 2.6s ease-in-out infinite;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
 }
 
-.boton-abrir:hover {
-  transform: translateX(-50%) translateY(-2px);
+.boton-abrir::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -80%;
+
+    width: 50%;
+    height: 100%;
+
+    transform: skewX(-22deg);
+
+    background: rgba(255,255,255,.35);
+
+    animation: brilloBoton 3.2s ease-in-out infinite;
+
+    pointer-events: none;
 }
 
-.boton-abrir:active {
-  transform: translateX(-50%) scale(0.97);
+@keyframes flotarGlow {
+    0%,100% {
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+        box-shadow:
+            0 8px 20px rgba(0,0,0,.16),
+            0 0 0 rgba(209,3,15,0);
+    }
+
+    50% {
+        transform:
+            translateX(-50%)
+            translateY(-7px);
+
+        box-shadow:
+            0 14px 28px rgba(0,0,0,.18),
+            0 0 18px rgba(209,3,15,.45);
+    }
+}
+
+@keyframes brilloBoton {
+    0% {
+        left: -80%;
+    }
+
+    45%,100% {
+        left: 130%;
+    }
 }
 
 
@@ -217,91 +288,91 @@ button {
 }
 
 
-/*
-   Control de música.
-   Está colocado bastante más abajo.
-*/
+/* =========================================================
+   MÚSICA
+   ========================================================= */
+
+.reproductor-integrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 26px;
+}
 
 .boton-musica {
-  position: absolute;
+    width: 56px;
+    height: 56px;
 
-  left: 50%;
-  top: 70%;
+    display: grid;
+    place-items: center;
 
-  transform: translate(-50%, -50%);
+    background: rgba(255,255,255,.72);
 
-  width: 72px;
-  height: 72px;
+    border:
+        1px solid rgba(209,3,15,.17);
 
-  border: 0;
-  border-radius: 50%;
+    border-radius: 50%;
 
-  background: rgba(255, 255, 255, 0.88);
+    box-shadow:
+        0 9px 24px rgba(112,30,53,.12);
 
-  color: #b87882;
+    cursor: pointer;
 
-  cursor: pointer;
-
-  box-shadow:
-    0 8px 25px rgba(100, 60, 70, 0.14);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.boton-musica:hover {
-  transform: translate(-50%, -50%) scale(1.05);
-}
-
-.boton-musica.reproduciendo {
-  animation: girarDisco 3s linear infinite;
+    animation:
+        botonSuave 2.8s ease-in-out infinite;
 }
 
 .disco {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 41px;
+    height: 41px;
 
-  width: 100%;
-  height: 100%;
+    display: grid;
+    place-items: center;
 
-  font-size: 27px;
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #f8c3d1 0 2px,
+            #f2a7bc 3px 4px
+        );
+
+    border:
+        2px solid rgba(255,255,255,.85);
+}
+
+.boton-musica.sonando .disco {
+    animation:
+        girar 2.4s linear infinite;
+}
+
+.centro-disco {
+    width: 15px;
+    height: 15px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--rojo);
+    color: white;
+
+    font-family: Arial,sans-serif;
+
+    font-size: 7px;
 }
 
 .texto-musica {
-  position: absolute;
+    color: var(--rojo);
 
-  left: 50%;
-  top: calc(70% + 58px);
+    font-size: 7px;
 
-  transform: translateX(-50%);
-
-  border: 0;
-  background: transparent;
-
-  color: #9b6870;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 10px;
-  font-weight: 600;
-
-  letter-spacing: 2px;
-
-  white-space: nowrap;
-
-  cursor: pointer;
-}
-
-@keyframes girarDisco {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+    letter-spacing: .16em;
 }
 
 

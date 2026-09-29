@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -26,9 +27,10 @@
       class="imagen-portada"
     >
 
-    <button id="abrirInvitacion" class="boton-abrir">
-      ABRIR INVITACIÓN
-    </button>
+     <button id="abrirInvitacion" class="boton-abrir" type="button">
+            <span>ABRIR INVITACIÓN</span>
+        </button>
+        
   </section>
 
 
@@ -40,9 +42,9 @@
 
     <div id="transicion" class="transicion"></div>
 
-    <audio id="musica" preload="auto" loop>
-      <source src="audio/musica.mp3" type="audio/mpeg">
-    </audio>
+     <audio id="musica" preload="auto" loop>
+            <source src="music/Mi persona favorita.mp3" type="audio/mpeg">
+        </audio>
 
 
     <!-- ===================================================
@@ -57,28 +59,24 @@
         class="seccion-fondo"
       >
 
-      <div class="contenido-overlay bienvenida-overlay">
+         <div class="reproductor-integrado">
 
-        <button
-          id="botonMusica"
-          class="boton-musica"
-          type="button"
-          aria-label="Reproducir música"
-        >
-          <span class="disco">
-            ♫
-          </span>
-        </button>
+                    <button
+                        id="botonMusica"
+                        class="boton-musica"
+                        type="button"
+                        aria-label="Reproducir música"
+                    >
+                        <span class="disco">
+                            <span class="centro-disco">▶</span>
+                        </span>
+                    </button>
 
-        <button
-          id="textoMusica"
-          class="texto-musica"
-          type="button"
-        >
-          TOCA PARA ESCUCHAR
-        </button>
+                    <p id="textoMusica" class="texto-musica">
+                        TOCA PARA ESCUCHAR
+                    </p>
 
-      </div>
+                </div>
 
     </section>
 
