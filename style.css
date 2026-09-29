@@ -671,7 +671,7 @@ button {
   position: absolute;
 
   left: 50%;
-  top: 72%;
+  top: 80%;
 
   transform: translate(-50%, -50%);
 
@@ -685,9 +685,9 @@ button {
 
   border-radius: 30px;
 
-  background: rgba(255, 255, 255, 0.93);
+  background: #D1030F;
 
-  color: #9b6870;
+  color: #FFFFFF;
 
   font-family: "Montserrat", sans-serif;
 
