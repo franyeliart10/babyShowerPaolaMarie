@@ -522,133 +522,130 @@ button {
 }
 
 /* =========================================================
-   CUENTA REGRESIVA
+   CUENTA
    ========================================================= */
 
-.cuenta-overlay {
-  position: absolute;
+.cuenta {
+    min-height: 82svh;
+
+    background: var(--rojo);
+
+    color: white;
 }
 
+.fondo-cuenta {
+    inset: 0;
 
-/*
-   La cuenta queda contenida dentro de la imagen.
-   Nada de tamaños gigantes.
-*/
+    z-index: 0;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(255,255,255,.18),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(246,173,193,.25),
+            transparent 28%
+        ),
+        linear-gradient(
+            145deg,
+            #d1030f,
+            #ad020c
+        );
+}
+
+.cuenta-contenido {
+    max-width: 650px;
+}
+
+.cuenta h2,
+.rsvp h2 {
+    margin-top: 13px;
+
+    font-family: "Joshico",cursive;
+
+    font-size:
+        clamp(38px,10vw,60px);
+
+    line-height: .95;
+
+    font-weight: normal;
+}
+
+.cuenta .seccion-etiqueta,
+.rsvp .seccion-etiqueta {
+    color: rgba(255,255,255,.82);
+}
 
 .contador {
-  position: absolute;
+    display: grid;
 
-  left: 50%;
-  top: 48%;
+    grid-template-columns:
+        repeat(4,1fr);
 
-  transform: translate(-50%, -50%);
+    gap: 8px;
 
-  width: min(82%, 520px);
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-
-  gap: clamp(5px, 2vw, 15px);
-
-  align-items: center;
-  justify-items: center;
+    margin-top: 35px;
 }
 
 .contador-item {
-  width: 100%;
+    min-height: 92px;
 
-  border: 0;
-  background: transparent;
+    padding: 10px 3px;
 
-  color: #9c6b72;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  cursor: pointer;
+    border:
+        1px solid rgba(255,255,255,.36);
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    border-radius: 18px;
 
-  transition:
-    transform 0.25s ease;
+    color: white;
+
+    background:
+        rgba(255,255,255,.08);
+
+    cursor: pointer;
 }
 
-.contador-item:hover {
-  transform: translateY(-3px);
+.contador-item:hover,
+.contador-item.pulsado {
+    transform: translateY(-4px);
+
+    background:
+        rgba(255,255,255,.15);
+}
+
+.contador-item strong {
+    font-size:
+        clamp(23px,7vw,38px);
+
+    font-weight: 500;
 }
 
 .contador-item span {
-  display: block;
+    margin-top: 5px;
 
-  font-family: "Cormorant Garamond", serif;
+    font-size: 6px;
 
-  font-size: clamp(27px, 5vw, 52px);
+    letter-spacing: .13em;
 
-  line-height: 0.95;
-
-  font-weight: 600;
+    opacity: .82;
 }
 
-.contador-item small {
-  display: block;
+.micro-mensaje {
+    margin-top: 22px;
 
-  margin-top: 5px;
+    font-size: 8px;
 
-  font-family: "Montserrat", sans-serif;
+    letter-spacing: .08em;
 
-  font-size: clamp(7px, 1.3vw, 10px);
-
-  font-weight: 600;
-
-  letter-spacing: 1px;
-}
-
-.mensaje-contador {
-  position: absolute;
-
-  left: 50%;
-  top: 64%;
-
-  transform: translateX(-50%);
-
-  width: 90%;
-
-  text-align: center;
-
-  font-family: "Montserrat", sans-serif;
-
-  font-size: 10px;
-
-  color: #a47479;
-
-  opacity: 0;
-
-  transition: opacity 0.3s ease;
-}
-
-.mensaje-contador.visible {
-  opacity: 1;
-}
-
-.frase-contador {
-  position: absolute;
-
-  left: 50%;
-  bottom: 9%;
-
-  transform: translateX(-50%);
-
-  width: 90%;
-
-  text-align: center;
-
-  color: #a47479;
-
-  font-family: "Cormorant Garamond", serif;
-
-  font-size: clamp(13px, 2.2vw, 19px);
-
-  font-style: italic;
+    opacity: .72;
 }
 
 

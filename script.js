@@ -311,61 +311,65 @@ fresas.forEach((fresa) => {
 
 });
 
-
-/* =========================================================
-   RSVP WHATSAPP
-   ========================================================= */
-
-const rsvpSi = document.getElementById("rsvpSi");
-const rsvpNo = document.getElementById("rsvpNo");
-
+/* ---------- RSVP / WHATSAPP ---------- */
 
 /*
-   Cambia este número por el número de WhatsApp
-   que ya utilizabas en tu invitación.
+   Número de WhatsApp:
+
+   Para WhatsApp se escribe sin:
+   +
+   espacios
+   guiones
 */
 
-const numeroWhatsApp = "0000000000";
+const numeroWhatsApp =
+    "+18094236644";
 
 
-if (rsvpSi) {
-
-  rsvpSi.addEventListener("click", (event) => {
-
-    event.preventDefault();
-
-    const mensaje = encodeURIComponent(
-      "Hola ♡ Confirmo mi asistencia al Baby Shower de Paola Marie. ¡Allí estaré!"
-    );
-
-    const url =
-      `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
-
-    window.open(url, "_blank");
-
-  });
-
-}
+const mensajeAsistencia =
+    "Hola Christy, Confirmo mi asistencia al Baby Shower de Paola Marie. ¡Estoy muy feliz de acompañarte!";
 
 
-if (rsvpNo) {
+const mensajeNoAsistencia =
+    "Hola Christy, Muchas gracias por la invitación. Lamentablemente no podré asistir al Baby Shower de Paola Marie, pero te deseo lo mejor en este momento tan especial. ¡Felicidades!";
 
-  rsvpNo.addEventListener("click", (event) => {
 
-    event.preventDefault();
+const rsvpBotones =
+    document.querySelectorAll(".rsvp-btn");
 
-    const mensaje = encodeURIComponent(
-      "Hola ♡ Gracias por la invitación al Baby Shower de Paola Marie. Lamentablemente no podré asistir."
-    );
 
-    const url =
-      `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+rsvpBotones.forEach((boton, indice) => {
 
-    window.open(url, "_blank");
+    boton.addEventListener("click", () => {
 
-  });
+        let mensaje;
 
-}
+
+        if (indice === 0) {
+
+            mensaje =
+                mensajeAsistencia;
+
+        } else {
+
+            mensaje =
+                mensajeNoAsistencia;
+
+        }
+
+
+        const url =
+            `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+    });
+
+});
 
 
 /* =========================================================
