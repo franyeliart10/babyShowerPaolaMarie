@@ -2,6 +2,14 @@
    RESET
    ========================================================= */
 
+@font-face {
+    font-family: "Joshico";
+    src: url("fonts/Joshico.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -1330,46 +1338,54 @@ button {
    ========================================================= */
 
 .footer {
-  width: 100%;
+    width: 100%;
 
-  padding: 35px 20px 40px;
+    padding:
+        28px 20px 32px;
 
-  background: #fff;
+    text-align: center;
 
-  text-align: center;
+    background: #fff;
 
-  color: #9c8a8d;
+    color: #b17582;
 }
 
-.footer-contenido {
-  max-width: 600px;
+.footer p {
+    margin-bottom: 7px;
 
-  margin: 0 auto;
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
 }
 
-.footer-titulo {
-  margin-bottom: 8px;
+.footer strong {
+    display: block;
 
-  color: #a86b73;
+    margin-bottom: 8px;
 
-  font-family: "Cormorant Garamond", serif;
+    color: var(--rojo);
 
-  font-size: 22px;
+    font-family: "Joshico",cursive;
 
-  font-weight: 600;
+    font-size: 24px;
 
-  letter-spacing: 2px;
+    font-weight: normal;
 }
 
-.footer p:not(.footer-titulo) {
-  font-family: "Montserrat", sans-serif;
+.footer span {
+    display: block;
 
-  font-size: 9px;
+    margin-top: 4px;
 
-  line-height: 1.7;
+    font-size: 8px;
 
-  letter-spacing: 0.4px;
+    letter-spacing: .6px;
+
+    opacity: .7;
 }
+
 
 
 /* =========================================================
