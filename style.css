@@ -728,6 +728,102 @@ button {
    Nunca row en tablet.
 */
 
+.colores-dress {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    width: min(300px,100%);
+
+    margin:
+        25px auto 14px;
+}
+
+.color-opcion {
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 8px 14px;
+
+    border:
+        1px solid rgba(209,3,15,.18);
+
+    border-radius: 999px;
+
+    color: #5e3140;
+
+    background:
+        rgba(255,255,255,.76);
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.color-opcion:hover,
+.color-opcion.seleccionado {
+    transform:
+        translateY(-2px)
+        scale(1.02);
+
+    border-color: var(--rojo);
+
+    background: rgba(255,255,255,.98);
+
+    box-shadow:
+        0 10px 24px rgba(91,28,46,.12);
+}
+
+.color-opcion span {
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid rgba(255,255,255,.95);
+
+    box-shadow:
+        0 2px 9px rgba(90,30,45,.15);
+}
+
+.color-opcion.blanco span {
+    background: white;
+    border-color: #ead6dd;
+}
+
+.color-opcion.rosa span {
+    background: var(--rosa);
+}
+
+.color-opcion.rojo span {
+    background: var(--rojo);
+}
+
+.dress-mensaje {
+    min-height: 16px;
+
+    color: var(--rojo);
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
+}
+
+
 .colores-dresscode {
   position: absolute;
 
