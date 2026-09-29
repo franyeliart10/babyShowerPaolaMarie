@@ -279,12 +279,18 @@ button {
 }
 
 
+
 /* =========================================================
    BIENVENIDA
    ========================================================= */
 
+.bienvenida {
+    position: relative;
+    overflow: hidden;
+}
+
 .bienvenida-overlay {
-  position: absolute;
+    position: absolute;
 }
 
 
@@ -293,14 +299,35 @@ button {
    ========================================================= */
 
 .reproductor-integrado {
+    position: absolute;
+
+    /*
+       Coloca el reproductor debajo del texto
+       principal de la bienvenida.
+    */
+    top: 58%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: max-content;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
     gap: 8px;
 
-    margin-top: 26px;
+    margin: 0;
+
+    z-index: 10;
 }
+
+
+/* =========================================================
+   BOTÓN DE MÚSICA
+   ========================================================= */
 
 .boton-musica {
     width: 56px;
@@ -309,10 +336,11 @@ button {
     display: grid;
     place-items: center;
 
+    padding: 0;
+
     background: rgba(255,255,255,.72);
 
-    border:
-        1px solid rgba(209,3,15,.17);
+    border: 1px solid rgba(209,3,15,.17);
 
     border-radius: 50%;
 
@@ -324,6 +352,11 @@ button {
     animation:
         botonSuave 2.8s ease-in-out infinite;
 }
+
+
+/* =========================================================
+   DISCO
+   ========================================================= */
 
 .disco {
     width: 41px;
@@ -345,10 +378,20 @@ button {
         2px solid rgba(255,255,255,.85);
 }
 
+
+/* =========================================================
+   DISCO GIRANDO
+   ========================================================= */
+
 .boton-musica.sonando .disco {
     animation:
         girar 2.4s linear infinite;
 }
+
+
+/* =========================================================
+   CENTRO DEL DISCO
+   ========================================================= */
 
 .centro-disco {
     width: 15px;
@@ -360,21 +403,32 @@ button {
     border-radius: 50%;
 
     background: var(--rojo);
+
     color: white;
 
-    font-family: Arial,sans-serif;
+    font-family: Arial, sans-serif;
 
     font-size: 7px;
 }
 
+
+/* =========================================================
+   TEXTO DEL REPRODUCTOR
+   ========================================================= */
+
 .texto-musica {
+    margin: 0;
+
     color: var(--rojo);
 
     font-size: 7px;
 
     letter-spacing: .16em;
-}
 
+    line-height: 1.3;
+
+    text-align: center;
+}
 
 /* =========================================================
    FECHA
@@ -437,6 +491,34 @@ button {
   font-size: 17px;
 }
 
+.boton-linea {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 18px;
+
+    border:
+        1px solid rgba(209,3,15,.45);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    color: var(--rojo);
+
+    font-size: 8px;
+
+    letter-spacing: .13em;
+
+    text-decoration: none;
+    position: absolute;
+
+  left: 50%;
+  top: 90%;
+
+}
 
 /* =========================================================
    CUENTA REGRESIVA
