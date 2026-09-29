@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baby Shower Paola Marie</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       PORTADA
+       ===================================================== -->
+
+  <section id="portada" class="portada">
+    <img
+      src="images/portada-referencia.PNG"
+      alt="Invitación Baby Shower Paola Marie"
+      class="imagen-portada"
+    >
+
+    <button id="abrirInvitacion" class="boton-abrir">
+      ABRIR INVITACIÓN
+    </button>
+  </section>
+
+
+  <!-- =====================================================
+       INVITACIÓN
+       ===================================================== -->
+
+  <main id="invitacion" class="invitacion">
+
+    <div id="transicion" class="transicion"></div>
+
+    <audio id="musica" preload="auto" loop>
+      <source src="audio/musica.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- ===================================================
+         BIENVENIDA
+         =================================================== -->
+
+    <section id="bienvenida" class="seccion seccion-imagen bienvenida">
+
+      <img
+        src="images/fondo-bienvenida.png"
+        alt=""
+        class="seccion-fondo"
+      >
+
+      <div class="contenido-overlay bienvenida-overlay">
+
+        <button
+          id="botonMusica"
+          class="boton-musica"
+          type="button"
+          aria-label="Reproducir música"
+        >
+          <span class="disco">
+            ♫
+          </span>
+        </button>
+
+        <button
+          id="textoMusica"
+          class="texto-musica"
+          type="button"
+        >
+          TOCA PARA ESCUCHAR
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         FECHA
+         =================================================== -->
+
+    <section id="fecha" class="seccion seccion-imagen fecha">
+
+      <img
+        src="images/fondo-fecha.png"
+        alt=""
+        class="seccion-fondo"
+      >
+
+      <div class="contenido-overlay fecha-overlay">
+
+        <button
+          id="calendarioBtn"
+          class="boton-calendario"
+          type="button"
+        >
+          <span class="icono-calendario">♡</span>
+          <span>AGREGAR AL CALENDARIO</span>
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CUENTA REGRESIVA
+         =================================================== -->
+
+    <section id="cuenta" class="seccion seccion-imagen cuenta">
+
+      <img
+        src="images/fondo-cuenta.png"
+        alt=""
+        class="seccion-fondo"
+      >
+
+      <div class="contenido-overlay cuenta-overlay">
+
+        <div id="contador" class="contador">
+
+          <button class="contador-item" data-tipo="días" type="button">
+            <span id="dias">00</span>
+            <small>DÍAS</small>
+          </button>
+
+          <button class="contador-item" data-tipo="horas" type="button">
+            <span id="horas">00</span>
+            <small>HORAS</small>
+          </button>
+
+          <button class="contador-item" data-tipo="minutos" type="button">
+            <span id="minutos">00</span>
+            <small>MINUTOS</small>
+          </button>
+
+          <button class="contador-item" data-tipo="segundos" type="button">
+            <span id="segundos">00</span>
+            <small>SEGUNDOS</small>
+          </button>
+
+        </div>
+
+        <p id="mensajeContador" class="mensaje-contador"></p>
+
+        <p class="frase-contador">
+          Cada segundo nos acerca a Paola Marie.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         UBICACIÓN
+         =================================================== -->
+
+    <section id="ubicacion" class="seccion seccion-imagen ubicacion">
+
+      <img
+        src="images/fondo-ubicacion.png"
+        alt=""
+        class="seccion-fondo"
+      >
+
+      <div class="contenido-overlay ubicacion-overlay">
+
+        <a
+          href="https://maps.google.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="boton-ubicacion"
+        >
+          VER UBICACIÓN
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         DRESS CODE
+         =================================================== -->
+
+    <section id="dresscode" class="seccion seccion-imagen dresscode">
+
+      <img
+        src="images/fondo-dresscode.png"
+        alt=""
+        class="seccion-fondo"
+      >
+
+      <div class="contenido-overlay dresscode-overlay">
+
+        <div class="colores-dresscode">
+
+          <button
+            class="color-btn color-1"
+            data-color="Rosa"
+            type="button"
+          >
+            ROSA
+          </button>
+
+          <button
+            class="color-btn color-2"
+            data-color="Beige"
+            type="button"
+          >
+            BEIGE
+          </button>
+
+          <button
+            class="color-btn color-3"
+            data-color="Blanco"
+            type="button"
+          >
+            BLANCO
+          </button>
+
+        </div>
+
+        <p id="mensajeColor" class="mensaje-color">
+          Toca un color
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         REGALOS
+         =================================================== -->
+
+    <section id="regalos" class="seccion seccion-imagen regalos">
+
+      <img
+        src="images/fondo-regalos.png"
+        alt=""
+        class="seccion-fondo"
+      >
+
+      <div class="contenido-overlay regalos-overlay">
+
+        <div class="regalos-lista">
+
+          <button class="regalo-item" type="button">
+            <span class="regalo-icono">♡</span>
+
+            <span class="regalo-texto">
+              <strong>PAMPERS</strong>
+              <small>Del número 2 en adelante</small>
+            </span>
+          </button>
+
+
+          <button class="regalo-item" type="button">
+            <span class="regalo-icono">♡</span>
+
+            <span class="regalo-texto">
+              <strong>WIPES</strong>
+              <small>Sin alcohol</small>
+            </span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         RSVP
+         =================================================== -->
+
+    <section id="rsvp" class="seccion seccion-imagen rsvp">
+
+      <img
+        src="images/fondo-rsvp.png"
+        alt=""
+        class="seccion-fondo"
+      >
+
+      <div class="contenido-overlay rsvp-overlay">
+
+        <div class="rsvp-confirmacion">
+
+          <p class="rsvp-fecha-label">
+            CONFIRMAR ANTES DEL
+          </p>
+
+          <p class="rsvp-fecha">
+            JUEVES 15 DE OCTUBRE
+          </p>
+
+          <div class="rsvp-botones">
+
+            <a
+              id="rsvpSi"
+              href="https://wa.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="boton-rsvp boton-si"
+            >
+              SÍ, ALLÍ ESTARÉ
+            </a>
+
+            <a
+              id="rsvpNo"
+              href="https://wa.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="boton-rsvp boton-no"
+            >
+              NO PODRÉ ASISTIR
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Las fresitas translúcidas se conservan SOLO aquí -->
+
+        <button
+          class="grafico-fresa rsvp-fresa rsvp-fresa-1"
+          type="button"
+          aria-label="Decoración"
+        >
+          🍓
+        </button>
+
+        <button
+          class="grafico-fresa rsvp-fresa rsvp-fresa-2"
+          type="button"
+          aria-label="Decoración"
+        >
+          🍓
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         FOOTER
+         =================================================== -->
+
+    <footer class="footer">
+
+      <div class="footer-contenido">
+
+        <p class="footer-titulo">
+          PAOLA MARIE
+        </p>
+
+        <p>
+          Gracias por formar parte de este momento tan especial.
+        </p>
+
+      </div>
+
+    </footer>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

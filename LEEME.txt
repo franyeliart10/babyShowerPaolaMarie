@@ -1,0 +1,25 @@
+PAOLA MARIE | NUEVA COMPOSICIÓN POR FONDOS
+
+La portada se conserva sin cambios.
+
+Añade tus imágenes de fondo a la carpeta images con estos nombres EXACTOS:
+1. fondo-bienvenida.png
+2. fondo-fecha.png
+3. fondo-cuenta.png
+4. fondo-ubicacion.png
+5. fondo-dresscode.png
+6. fondo-regalos.png
+7. fondo-rsvp.png
+
+Estas siete imágenes son los fondos de las siete secciones. El código las muestra completas y mantiene su proporción usando object-fit: contain, por lo que no se recortan ni se deforman.
+
+Se conservaron únicamente las interacciones solicitadas:
+- Bienvenida: música + “TOCA PARA ESCUCHAR”.
+- Fecha: agregar al calendario.
+- Cuenta: contador + frase “Cada segundo nos acerca a Paola Marie.”
+- Ubicación: botón VER UBICACIÓN.
+- Dress Code: colores + interacción “Toca un color”.
+- Regalitos: Pampers y Wipes, con movimiento suave.
+- RSVP: fecha límite + botones de WhatsApp.
+
+IMPORTANTE: conserva tus carpetas originales images, music y fonts. La portada no fue modificada.
